@@ -6,18 +6,16 @@ function getBooks() {
 
 function getBookById(id) {
   const book = books[id];
-  
-  if (!books) {
+
+  if (!book) {
     return null;
   }
 
-  return book;
+  return book.id;
 }
 
 function saveBook(book) {
-  if (book.id) {
-    books[book.id] = book;
-  }
+  books[book.id] = book;
 }
 
 saveBook({id: 'book-1', name: 'Book 1'});
