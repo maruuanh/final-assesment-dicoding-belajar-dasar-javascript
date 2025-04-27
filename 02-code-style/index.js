@@ -1,4 +1,4 @@
-const books = {};
+const books = {} ;
 
 function getBooks() {
   return books;
@@ -6,16 +6,18 @@ function getBooks() {
 
 function getBookById(id) {
   const book = books[id];
-
-  if (!book) {
+  
+  if (!books) {
     return null;
   }
 
-  return book.id;
+  return book;
 }
 
 function saveBook(book) {
-  books[book.id] = book;
+  if (book.id) {
+    books[book.id] = book;
+  }
 }
 
 saveBook({id: 'book-1', name: 'Book 1'});
